@@ -22,6 +22,78 @@ body{
     background-color: #050c1b;
 }
 
+/* preloader design */
+
+.preloader{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.267);
+    position: fixed;
+    z-index: 999;
+}
+
+.preloader .loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    width: 100px;
+    justify-content: space-around;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.preloader .loader .loadBar{
+    height: 9px;
+    width: 9px;
+    background-color: #fff;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    animation: loadingBar 0.7s infinite;
+    -webkit-animation: loadingBar 0.7s infinite;
+}
+
+.preloader .loader .loadBar:nth-child(1){
+    background-color: red;
+}
+
+.preloader .loader .loadBar:nth-child(2){
+    background-color: green;
+    animation-delay: 0.2s;
+}
+
+.preloader .loader .loadBar:nth-child(3){
+    background-color: lightgray;
+    animation-delay: 0.3s;
+}
+
+.preloader .loader .loadBar:nth-child(4){
+    background-color: lightgreen;
+    animation-delay: 0.4s;
+}
+
+
+
+@keyframes loadingBar{
+    0%{
+        margin-top: -10px;
+    }
+    100%{
+        margin-top: 0;
+    }
+}
+
+
+/* preloader design */
+
 
 /* header area css */
 
@@ -115,4 +187,99 @@ header .banner h1{
     margin-top: 10px;
 }
 
+.det-btn{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: blue;
+}
+
+.det-btn:hover{
+    text-decoration: underline;
+}
+
 /* section area css */
+
+/* match popup card */
+
+.popup{
+   position: absolute;
+   z-index: 999999;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 70%;
+   background-color: #fff;
+   border-radius: 10px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+   padding: 20px;
+   display: none;
+   transition: 0.5s ease-in-out;
+   -webkit-transition: 0.5s ease-in-out;
+   -moz-transition: 0.5s ease-in-out;
+   -ms-transition: 0.5s ease-in-out;
+   -o-transition: 0.5s ease-in-out;
+}
+
+.popup .popup-header{
+    padding: 8px 12px;
+    text-align: right;
+}
+
+.popup .popup-header p{
+    color: red;
+    cursor: pointer;
+}
+
+.popup-body{
+    border-top: 0.5px dotted lightgray;
+    padding-top: 20px;
+}
+
+.popup-body .match-name{
+    padding: 10px 0;
+    color: #EB455F;
+    font-size: 29px;
+}
+
+#match-venue{
+    font-size: 14px;
+    color: rgb(165, 12, 12);
+    margin-top: 10px;
+}
+
+.popup-body .short-score {
+    font-size: 20px;
+}
+
+.popup-body .short-score img{
+    width: 40px;
+    height: auto;
+}
+
+.popup-body .match-result{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 21px;
+    color: #669966;
+}
+
+
+@media only screen and (max-width: 700px){
+    .popup{
+        width: 100%;
+        height: auto;
+    }
+
+    .cricketSection{
+        width: 100%;
+    }
+
+    .footballSection{
+        width: 100%;
+    }
+}
